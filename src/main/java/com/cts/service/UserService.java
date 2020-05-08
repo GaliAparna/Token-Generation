@@ -1,10 +1,10 @@
-package me.aboullaite.service;
+package com.cts.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import me.aboullaite.dao.UserDao;
-import me.aboullaite.model.User;
+import com.cts.dao.UserDao;
+import com.cts.model.User;
 
 @Service
 public class UserService {

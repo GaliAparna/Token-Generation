@@ -1,11 +1,11 @@
-package me.aboullaite.dao;
+package com.cts.dao;
 
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import me.aboullaite.model.User;
+import com.cts.model.User;
 
 @Repository
 public interface UserDao extends CrudRepository<User, Integer> {

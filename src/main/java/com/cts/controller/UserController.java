@@ -1,4 +1,4 @@
-package me.aboullaite.controller;
+package com.cts.controller;
 
 import java.util.Date;
 
@@ -11,24 +11,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import me.aboullaite.model.User;
-import me.aboullaite.service.UserService;
+import com.cts.model.User;
+import com.cts.service.UserService;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+
 @CrossOrigin(origins = "http://localhost", maxAge = 3600)
 @RestController
 @RequestMapping("/user")
+
 public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	
+	
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public void registerUser(@RequestBody User user) {
 		userService.addUser(user);
 	}
+	
+	
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@RequestBody User login) throws ServletException {

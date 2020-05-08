@@ -1,4 +1,4 @@
-package me.aboullaite.config;
+package com.cts.config;
 
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
