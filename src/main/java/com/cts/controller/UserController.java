@@ -16,6 +16,7 @@ import com.cts.service.UserService;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.swagger.annotations.ApiOperation;
 
 
 @CrossOrigin(origins = "http://localhost", maxAge = 3600)
@@ -27,16 +28,22 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	
-	
+	@ApiOperation(value="Post all user",
+			produces="A list of user",
+			notes="Hit this URL to get all user"
+			)
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public void registerUser(@RequestBody User user) {
 		userService.addUser(user);
 	}
 	
+	@ApiOperation(value="Post all user",
+			produces="A list of user",
+			notes="Hit this URL to get all user"
+			)
 	
-
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@RequestBody User login) throws ServletException {
 

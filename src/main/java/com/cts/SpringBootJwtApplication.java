@@ -5,10 +5,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import com.cts.config.JwtFilter;
-
+@EnableSwagger2
 @SpringBootApplication
+
 public class SpringBootJwtApplication {
 
 	@Bean
@@ -23,5 +28,17 @@ public class SpringBootJwtApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootJwtApplication.class, args);
 	}
+
+	@Bean
+    Docket configureSwagger() {
+		return new Docket(DocumentationType.SWAGGER_2)
+				.select()
+			.paths(PathSelectors.ant("/user/**"))
+			.build();
+		
+			
+	}
+
+	
 	
 }
